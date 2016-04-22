@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+User	model/user.js	/^function User(user) {$/;"	c
+User.getByName	model/user.js	/^};$/;"	f
+User.save	model/user.js	/^User.prototype.save = function(callback) {$/;"	m
+body-parser	package.json	/^    "body-parser": "~1.13.2",$/;"	f
+connect-mongo	package.json	/^    "connect-mongo": "^1.1.0",$/;"	f
+cookie-parser	package.json	/^    "cookie-parser": "~1.3.5",$/;"	f
+debug	package.json	/^    "debug": "~2.2.0",$/;"	f
+dependencies	package.json	/^  "dependencies": {$/;"	f
+ejs	package.json	/^    "ejs": "~2.3.3",$/;"	f
+exports.close	model/database.js	/^};$/;"	f
+exports.connect	model/database.js	/^};$/;"	f
+exports.get	model/database.js	/^};$/;"	f
+express	package.json	/^    "express": "~4.13.1",$/;"	f
+express-session	package.json	/^    "express-session": "^1.13.0",$/;"	f
+module.exports	routes/index.js	/^var post = require('.\/post');$/;"	f
+mongodb	package.json	/^    "mongodb": "^2.1.16",$/;"	f
+morgan	package.json	/^    "morgan": "~1.6.1",$/;"	f
+name	package.json	/^  "name": "share",$/;"	f
+private	package.json	/^  "private": true,$/;"	f
+scripts	package.json	/^  "scripts": {$/;"	f
+serve-favicon	package.json	/^    "serve-favicon": "~2.3.0"$/;"	f
+start	package.json	/^    "start": "node .\/bin\/www"$/;"	f
+version	package.json	/^  "version": "0.0.0",$/;"	f
