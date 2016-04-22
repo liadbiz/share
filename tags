@@ -4,6 +4,15 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Post	model/post.js	/^function Post (post) {$/;"	f
+Post	model/post.js	/^module.exports = Post;$/;"	c
+Post.getAll	model/post.js	/^};$/;"	f
+Post.getOne	model/post.js	/^};$/;"	f
+Post.getTen	model/post.js	/^};$/;"	f
+Post.remove	model/post.js	/^};$/;"	f
+Post.save	model/post.js	/^Post.prototype.save = function(callback) {$/;"	m
+Post.search	model/post.js	/^};$/;"	f
+Post.update	model/post.js	/^};$/;"	f
 User	model/user.js	/^function User(user) {$/;"	c
 User.getByName	model/user.js	/^};$/;"	f
 User.save	model/user.js	/^User.prototype.save = function(callback) {$/;"	m

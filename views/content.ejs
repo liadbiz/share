@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/stylesheets/content.css" media="screen" title="no title" charset="utf-8">
+
+<div class="content">
+  <%# <div class="search-box">
+    <form class="search" action="search" method="get">
+      <input type="text" name="search_keyword" value="" placeholder="search blog" class="search-field">
+      <span class="search-submit"><i class="fa fa-search"></i></span>
+    </form>
+  </div>%>
+  <div class="post-list-wrapper">
+    <div class="post-list">
+      <% if(!posts.length) { %>
+        <p class="hint">
+          no blog you search yet~
+        </p>
+      <% } %>
+
+      <% posts.forEach(function(post, index) { %>
+        <div class="post-item">
+          <a href="/u/<%= post.author %>/<%= post.title%>/<%= post.time.till_minute%>" class="link post-title"><%= post.title %></a>
+          <div class="info">
+            <label for="author">作者</label>
+            <a class="link info-tag" href="/u/<%= post.author%>"><%= post.author %></a> |
+            <label for="time">时间</label>
+            <span class="time info-tag"><%= post.time.till_minute %></span>
+          </div>
+          <p class="content-wrap">
+            <%= post.content %>
+          </p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+</div>

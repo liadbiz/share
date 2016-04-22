@@ -1,3 +1,4 @@
+var Post = require('../model/post');
 var express = require('express');
 var router = express.Router();
 var login = require('./login');
@@ -8,9 +9,19 @@ var post = require('./post');
 
 module.exports = function(app) {
     app.get('/', function(req, res, next) {
-      res.render('index', {
-        title: 'world' ,
-        user: req.session.user
+      Post.getAll(null, function(err, posts, total) {
+        if (err){
+          posts = [];
+        }
+        res.render('index', {
+          title: 'main page',
+          user: req.session.user,
+          posts: posts,
+          total: total,
+          // page: page,
+          // isFirstPage: (page - 1)  == 0,
+          // isLastPage: ((page -1) * 10 + posts.length) == total,
+        });
       });
     });
 
