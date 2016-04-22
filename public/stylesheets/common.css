@@ -1,0 +1,46 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.link:hover{
+    text-decoration: underline;
+}
+
+
+.button{
+    display: inline-block;
+    height: 30px;
+    width: 60px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button-big{
+  display: inline-block;
+  height: 30px;
+  width: 80px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+.textarea{
+  display: block;
+  margin-top: 10px;
+  width: 100%;
+  outline: none;
+  resize: none;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.textarea:focus{
+  border:1px solid #4ba0d7;
+}
+.info-tag{
+  font-size: 0.8em;
+  color: #909090;

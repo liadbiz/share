@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/login.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/common.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <div class="form-wrapper">
+      <div class="content">
+        <h2>login liad blog</h2>
+        <form class="login-form" method="post" action="/login">
+          <div class="form-item input">
+            <!-- <label for="namr">name</label> -->
+            <input class="name" type="text" name="name" value="" placeholder="your name">
+          </div>
+          <div class="form-item input">
+            <!-- <label for="pwd">passWord</label> -->
+            <input class="pwd" type="password" name="pwd" value="" placeholder="your password">
+          </div>
+          <div class="form-item">
+            <input type="submit"  value="lets's go" class="submit">
+          </div>
+        </form>
+        <div class="error">
+
+        </div>
+      </div>
+
+    </div>
+    <script type="text/javascript">
+
+    var submit = document.getElementsByClassName('submit')[0];
+    submit.addEventListener('onclick', validate);
+
+    function validate(){
+      var n = document.getElementsByName("name")[0].value;
+      console.log(n);;
+      var pwd = document.getElementsByName("pwd")[0];
+      var error = [];
+      var errorHolder = document.getElementsByClassName('error')[0];
+      if (name == '') {
+        error.push("no name");
+      }else if(name.length > 12){
+        error.push("name is too long");
+      }
+
+      if (pwd == '') {
+        error.push("no password");
+      }else if (pwd.length >= 12) {
+        error.push("password is too long");
+      }
+
+      var ul = document.createElement('ul');
+      var error_list = document.createDocumentFragment();
+      for (prop in error) {
+
+        var li = document.createElement('li');
+        var liText = document.createTextNode(prop);
+        ul.appendChild(li);
+        error_list.appendChild(ul);
+      }
+      errorHolder.appendChild(error_list);
+    };
+  </script>
+
+  </body>
+</html>

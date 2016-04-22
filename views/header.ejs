@@ -1,0 +1,30 @@
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/header.css">
+<div class='header-wrapper'>
+    <header class='header'>
+        <nav class='header-left title'><a href="/" class="link"><h2>liad blog</h2></a></nav>
+        <nav class='header-right'>
+            <ul>
+                <li>
+                  <% if(user) { %>
+                    <a class='button post' href='/post'>post</a >
+                  <% } else { %>
+                    <a class='button login' href='/login'>login</a >
+                  <% } %>
+                </li>
+                <li>
+                  <% if(user) { %>
+                    <a class='button logout ' href='/logout'>logout</a >
+                  <% } else { %>
+                    <a class='button reg ' href='/signup'>signup</a >
+                  <% } %>
+                </li>
+                <% if (user) {%>
+                  <li class="user"><a class='link' href='/u/<%= user.name%>'><%= user.name %></a ></li>
+                <% } else {%>
+                  <li class="home"><a class='link' href='/'>home</a ></li>
+                <% }%>
+            </ul>
+        </nav>
+    </header>
+</div>

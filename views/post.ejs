@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/stylesheets/post.css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="/stylesheets/common.css" media="screen" title="no title" charset="utf-8">
+<title><%= title%></title>
+
+<div class="post-wrapper">
+    <section class="content">
+      <form class="postForm" action="/post" method="post">
+        <label for="title">
+          title</label>
+        <input type="text" name="title" value="" class="title">
+        <label for="tags"></label>
+        <input type="text" name="tags" value="" class="tag">
+        <span class="addClass button-big">添加标签</span><br/>
+        <label for="content" class="label-content">content</label><br/>
+        <textarea name="content" rows="8" cols="40" class="blog-content textarea"></textarea>
+        <input type="submit" value="post" class="submit">
+      </form>
+    </section>
+</div>
+<script type="text/javascript">
+  var addClassButton = document.getElementsByClassName('addClass')[0],
+  postForm = document.getElementsByClassName('postForm')[0];
+  addClassButton.onclick = function(e) {
+    var tag  = document.createElement('input');
+    tag.name = 'tags';
+    tag.type = 'text';
+    tag.className = 'tag';
+    postForm.insertBefore(tag, addClassButton);
+  }
+</script>
