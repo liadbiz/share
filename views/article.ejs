@@ -1,0 +1,26 @@
+<%- include header%>
+<link rel="stylesheet" href="/stylesheets/article.css" media="screen" title="no title" charset="utf-8">
+<article class="article-wrapper">
+
+  <div class="post-item">
+    <div class="options">
+      <a href="/u/<%= post.author %>/<%= post.title%>/<%= post.time.till_minute%>" class="title link"><%= post.title %></a>
+      <% if(user) {%>
+        <% if(post.author == user.name){ %>
+          <a href="/edit/<%= post.author %>/<%= post.title%>/<%= post.time.till_minute %>" class="edit link">编辑</a>
+          <a href="/remove/<%= post.author %>/<%= post.title%>/<%= post.time.till_minute %>" class="remove link">删除</a>
+         <% }%>
+      <% }%>
+  </div>
+    <div class="info">
+      <label for="author">作者</label>
+      <a class="author link info-tag" href="/u/<% post.author%>"><%= post.author %></a> |
+      <label for="time">时间</label>
+      <span class="time info-tag"><%= post.time.till_minute %></span>
+    </div>
+    <p class="content-wrap">
+       <%= post.content %>
+    </p>
+  </div>
+</article>
+<%- include footer%>

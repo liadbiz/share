@@ -5,6 +5,7 @@ var login = require('./login');
 var signup = require('./signup');
 var logout = require('./logout');
 var post = require('./post');
+var article = require('./article');
 
 
 module.exports = function(app) {
@@ -29,4 +30,5 @@ module.exports = function(app) {
     app.use('/login', login);
     app.use('/logout', logout);
     app.use('/post', post);
+    app.use('/u', article);
 };
