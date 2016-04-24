@@ -26,7 +26,6 @@ router.post('/', function(req, res, next) {
       res.redirect('/login');
     }
     if (password_hex != user.password) {
-      req.flash("error", "password wrong!");
       res.redirect("./login");
     }
     req.session.user = user;

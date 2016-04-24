@@ -6,7 +6,7 @@ var signup = require('./signup');
 var logout = require('./logout');
 var post = require('./post');
 var article = require('./article');
-
+var comment = require('./comment');
 
 module.exports = function(app) {
     app.get('/', function(req, res, next) {
@@ -31,4 +31,5 @@ module.exports = function(app) {
     app.use('/logout', logout);
     app.use('/post', post);
     app.use('/u', article);
+    app.use('/comment', comment);
 };

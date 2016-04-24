@@ -23,4 +23,77 @@
     </p>
   </div>
 </article>
+
+<div class="comment-wrapper">
+  <div class="comment-list">
+    <% if (post.comments != null ) { post.comments.forEach(function(comment, index){ %>
+        <div class="comment-item">
+          <a class="user-img">
+            <img src="/images/hacker.png" alt="" />
+          </a>
+          <div class="comment-right">
+            <a href="/u/<%= user.name%>" class="link comment-post-user"><%= comment.userName%></a>
+            <p class="comment-content">
+              <span><%= comment.replyUserName%></span>
+              <%= comment.commentContent%>
+            </p>
+          <div class="commentTime">
+            <span class="comment-post-time"><%= comment.commentTime%></span>
+            <span class="reply link" data-user-name="<%= comment.userName%>" data-comment-id="<%= index%>">reply</span>
+          </div>
+          </div>
+        </div>
+        <% })}%>
+  </div>
+</div>
+
+
+<% if(user) {%>
+  <div class="comment-input-wrapper">
+      <form class="comment-input" action="/comment" method="post">
+        <div class="form-wrapper">
+          <input type="hidden" name="postAuthor" value="<%= post.author %>">
+          <input type="hidden" name="postTitle" value="<%= post.title %>">
+          <input type="hidden" name="postTime" value="<%= post.time.till_minute %>">
+          <textarea name="commentContent" rows="8" cols="40" placeholder="牛逼的你， 来评论一发吧" class="textarea"></textarea>
+        </div>
+        <input type="submit" name="submit" value="submit" class="button-big">
+      </form>
+  </div>
+<% }%>
+<% if(!user) {%>
+<div class="hint-message">  你要先<a href="/login" class="link">登陆</a>才能评论，或者<a href="/reg" class="link">注册</a>一个账号
+
+</div>
+<% }%>
+<script type="text/javascript">
+  var replyButton = document.getElementsByClassName('reply'),
+  textArea = document.getElementsByClassName('textArea')[0],
+  formWrapper = document.getElementsByClassName('form-wrapper')[0];
+  for (var i = 0; i < replyButton.length; i++) {
+        replyButton[i].onclick = function(e) {
+          var replyUserName = this.getAttribute('data-user-name'),
+          commentId = parseInt(this.getAttribute('data-comment-id')) + 1,
+          replyTo = document.createElement('input'),
+          replyUserNameInput = document.createElement('input');
+          replyUserNameInput.type = "hidden";
+          replyUserNameInput.name = "replyUserName";
+          replyUserNameInput.value = "#" + commentId + "@" + replyUserName + "\n";
+          replyTo.setAttribute('disabled', "disabled");
+          replyTo.className = "replyTo";
+          replyTo.value = "#" + commentId + "@" + replyUserName + "\n";
+          formWrapper.insertBefore(replyTo, textArea);
+          formWrapper.insertBefore(replyUserNameInput, replyTo);
+          textArea.focus();
+    }
+
+  }
+
+  textArea.onfocus =  function(e) {
+    formWrapper.style.cssText = "border-color: #3d8fbd";
+  }
+  textArea.onblur = function(e) {
+    formWrapper.style.cssText = "border-color: #dedede";
+  }
+</script>
 <%- include footer%>
