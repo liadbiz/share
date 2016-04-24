@@ -66,6 +66,10 @@ body{
   margin-bottom: 10px;
   color: #909090;
 }
+
+.content-wrap{
+  color: #555;
+}
 a.author{
   color: #909090;
   font-size: 0.8em;

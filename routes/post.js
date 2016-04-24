@@ -8,12 +8,21 @@ router.get('/', function(req, res){
 });
 
 router.post('/', function(req, res){
+  var tags = [];
+  if (typeof( req.body.tags ) == 'string') {
+    tags.push(req.body.tags);
+  }else if (typeof(req.body.tags) == 'object') {
+    req.body.tags.forEach(function(tag, index) {
+      tags.push(tag);
+    });
+  }
 
   var currentUser = req.session.user,
       post = new Post({
         title: req.body.title,
         author: currentUser.name,
         content: req.body.content,
+        tags: tags
       });
   post.save(function(err) {
     if (err) {
