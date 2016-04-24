@@ -29,7 +29,7 @@ exports.connect	model/database.js	/^};$/;"	f
 exports.get	model/database.js	/^};$/;"	f
 express	package.json	/^    "express": "~4.13.1",$/;"	f
 express-session	package.json	/^    "express-session": "^1.13.0",$/;"	f
-module.exports	routes/index.js	/^var comment = require('.\/comment');$/;"	f
+module.exports	routes/index.js	/^var user = require('.\/user');$/;"	f
 mongodb	package.json	/^    "mongodb": "^2.1.16",$/;"	f
 morgan	package.json	/^    "morgan": "~1.6.1",$/;"	f
 name	package.json	/^  "name": "share",$/;"	f

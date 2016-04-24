@@ -176,7 +176,7 @@ Post.getTen = function(name, page, callback) {
 };
 
 
-Post.search = function(keyword, page, callback) {
+Post.search = function(keyword,   callback) {
     db.get().collection('posts', function(err, collection) {
       if (err) {
         return  callback(err);
@@ -184,11 +184,7 @@ Post.search = function(keyword, page, callback) {
       var pattern = new RegExp(keyword, "i");
       collection.count({"title": pattern}, function(err, total) {
         collection.find(
-          {"title": pattern},
-          {
-            skip: (page - 1) * 10,
-            limit: 10
-          }
+          {"title": pattern}
         ).sort({time: -1}).toArray(function(err, posts) {
           if (err) {
             mongodb.close();

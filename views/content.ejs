@@ -3,12 +3,12 @@
 <link rel="stylesheet" href="/lib/fa/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
 
 <div class="content">
-  <%# <div class="search-box">
+  <div class="search-box">
     <form class="search" action="search" method="get">
       <input type="text" name="search_keyword" value="" placeholder="search blog" class="search-field">
       <span class="search-submit"><i class="fa fa-search"></i></span>
     </form>
-  </div>%>
+  </div>
   <div class="post-list-wrapper">
     <div class="post-list">
       <% if(!posts.length) { %>
@@ -42,10 +42,10 @@
 
 </div>
 
-<%# <script type="text/javascript">
+<script type="text/javascript">
   var submitIcon = document.getElementsByClassName('search-submit')[0],
   searchForm = document.getElementsByClassName('search')[0];
   submitIcon.onclick  = function(e) {
     searchForm.submit();
   }
-</script>%>
+</script>

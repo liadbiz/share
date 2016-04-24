@@ -7,6 +7,8 @@ var logout = require('./logout');
 var post = require('./post');
 var article = require('./article');
 var comment = require('./comment');
+var search = require('./search');
+var user = require('./user');
 
 module.exports = function(app) {
     app.get('/', function(req, res, next) {
@@ -32,4 +34,6 @@ module.exports = function(app) {
     app.use('/post', post);
     app.use('/u', article);
     app.use('/comment', comment);
+    app.use('/search', search);
+    app.use('/u', user);
 };

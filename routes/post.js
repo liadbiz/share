@@ -23,6 +23,7 @@ router.post('/', function(req, res){
         author: currentUser.name,
         content: req.body.content,
         tags: tags
+
       });
   post.save(function(err) {
     if (err) {
